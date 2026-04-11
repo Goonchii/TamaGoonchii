@@ -7,12 +7,6 @@
 script = ExtResource("1_t436j")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(236.00024, 207.00018)
-scale = Vector2(0.6668857, 0.6668857)
+position = Vector2(258, 237)
+scale = Vector2(0.5213538, 0.5213538)
 texture = ExtResource("1_s2crv")
-
-[node name="Polygon2D" type="Polygon2D" parent="."]
-visible = false
-position = Vector2(-2037, -872)
-color = Color(1, 1, 1, 0)
-polygon = PackedVector2Array(2248, 822, 2241, 754, 2367, 752, 2354, 822, 2421, 858, 2484, 916, 2530, 983, 2555, 1058, 2572, 1165, 2557, 1281, 2525, 1345, 2471, 1404, 2390, 1437, 2290, 1456, 2163, 1429, 2101, 1372, 2048, 1275, 2019, 1134, 2071, 997, 2117, 910, 2170, 855)
