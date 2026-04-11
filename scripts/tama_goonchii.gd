@@ -17,7 +17,3 @@ func _input(_event: InputEvent) -> void:
 		var current_mouse_pos: Vector2 = DisplayServer.mouse_get_position()
 		var window_pos: Vector2 = current_mouse_pos - offset
 		DisplayServer.window_set_position(window_pos)
-	
-	#get_window().mouse_passthrough_polygon = $Polygon2D.polygon
-	#if Input.is_action_just_pressed("LClick"):
-		#print("clicked")
