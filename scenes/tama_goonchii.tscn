@@ -3,41 +3,143 @@
 [ext_resource type="Script" uid="uid://uoeb5as3laaq" path="res://scripts/tama_goonchii.gd" id="1_t436j"]
 [ext_resource type="Texture2D" uid="uid://csuxy0gcq325h" path="res://assets/screen bg.png" id="2_t4b6s"]
 [ext_resource type="Texture2D" uid="uid://ciamu3elbyisk" path="res://assets/case.png" id="2_t436j"]
-[ext_resource type="Texture2D" uid="uid://dq3uib06xjwuy" path="res://assets/button.png" id="4_8tse4"]
+[ext_resource type="Script" uid="uid://bmgdhtgv8as0t" path="res://scripts/tama_controller.gd" id="2_xlg61"]
+[ext_resource type="Shader" uid="uid://b1b6vv22luat6" path="res://shaders/screen.gdshader" id="4_aagdy"]
+[ext_resource type="Texture2D" uid="uid://btm4pseu8qtip" path="res://assets/temp feed icon.png" id="4_dd1l7"]
+[ext_resource type="Texture2D" uid="uid://d2vh75criwr60" path="res://assets/button normal.png" id="4_kstfn"]
+[ext_resource type="Texture2D" uid="uid://db2jpywh77guu" path="res://assets/temp play icon.png" id="5_7es38"]
+[ext_resource type="Script" uid="uid://bvvl7pycavosu" path="res://scripts/select_control.gd" id="5_81wvq"]
+[ext_resource type="Texture2D" uid="uid://cgol7gslefhui" path="res://assets/button pressed.png" id="5_xlg61"]
+[ext_resource type="Texture2D" uid="uid://drdqvdm53wq5o" path="res://assets/temp clean icon.png" id="6_81wvq"]
+[ext_resource type="Texture2D" uid="uid://bsj1a4d7td02j" path="res://assets/button hover.png" id="6_aagdy"]
+[ext_resource type="Texture2D" uid="uid://bue16u65rqf8y" path="res://assets/temp sleep icon.png" id="7_jnjx7"]
+[ext_resource type="Texture2D" uid="uid://bbaw56j0nrtic" path="res://assets/temp shovel icon.png" id="8_njl1l"]
+[ext_resource type="Texture2D" uid="uid://c7ehknb13q0il" path="res://assets/temp med icon.png" id="9_a7k32"]
+[ext_resource type="Texture2D" uid="uid://dbxooj88spavq" path="res://assets/temp status icon.png" id="10_aymvy"]
+[ext_resource type="Texture2D" uid="uid://d3akg224vg052" path="res://assets/temp menu icon.png" id="11_su65o"]
+[ext_resource type="Texture2D" uid="uid://ochg0bhpabhn" path="res://assets/icon bars.png" id="13_81wvq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qq0sh"]
+shader = ExtResource("4_aagdy")
+shader_parameter/shake = 0.0
 
 [node name="TamaGoonchii" type="Node2D" unique_id=156503668]
 script = ExtResource("1_t436j")
 
-[node name="ScreenBG" type="Sprite2D" parent="." unique_id=1890741163]
+[node name="TamaController" type="Node2D" parent="." unique_id=1744888156]
+script = ExtResource("2_xlg61")
+
+[node name="HungerTimer" type="Timer" parent="TamaController" unique_id=1423488531]
+wait_time = 60.0
+
+[node name="DirtyTimer" type="Timer" parent="TamaController" unique_id=1766672064]
+wait_time = 120.0
+
+[node name="BoredomTimer" type="Timer" parent="TamaController" unique_id=799552296]
+wait_time = 90.0
+
+[node name="Screen" type="CanvasLayer" parent="." unique_id=2130259119]
+
+[node name="ScreenBG" type="Sprite2D" parent="Screen" unique_id=1890741163]
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_t4b6s")
 centered = false
 
-[node name="Case" type="Sprite2D" parent="." unique_id=90497384]
+[node name="Icons" type="CanvasLayer" parent="." unique_id=279720056]
+visible = false
+
+[node name="SelectControl" type="Node2D" parent="Icons" unique_id=196078883]
+script = ExtResource("5_81wvq")
+
+[node name="IconBars" type="Sprite2D" parent="Icons" unique_id=768868381]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("13_81wvq")
+centered = false
+
+[node name="Shader" type="ColorRect" parent="Icons" unique_id=1371273175]
+material = SubResource("ShaderMaterial_qq0sh")
+offset_left = 62.0
+offset_top = 116.0
+offset_right = 360.0
+offset_bottom = 397.0
+
+[node name="FeedIcon" type="Sprite2D" parent="Icons" unique_id=1773870143 groups=["Icons"]]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_dd1l7")
+centered = false
+
+[node name="PlayIcon" type="Sprite2D" parent="Icons" unique_id=1224331784 groups=["Icons"]]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_7es38")
+centered = false
+
+[node name="CleanIcon" type="Sprite2D" parent="Icons" unique_id=1173755202 groups=["Icons"]]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_81wvq")
+centered = false
+
+[node name="SleepIcon" type="Sprite2D" parent="Icons" unique_id=633691814 groups=["Icons"]]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("7_jnjx7")
+centered = false
+
+[node name="ShovelIcon" type="Sprite2D" parent="Icons" unique_id=554348708 groups=["Icons"]]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_njl1l")
+centered = false
+
+[node name="MedicineIcon" type="Sprite2D" parent="Icons" unique_id=2080944064 groups=["Icons"]]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_a7k32")
+centered = false
+
+[node name="StatusIcon" type="Sprite2D" parent="Icons" unique_id=1583475102 groups=["Icons"]]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("10_aymvy")
+centered = false
+
+[node name="MenuIcon" type="Sprite2D" parent="Icons" unique_id=631739665 groups=["Icons"]]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("11_su65o")
+centered = false
+
+[node name="Case" type="CanvasLayer" parent="." unique_id=970157117]
+
+[node name="Case" type="Sprite2D" parent="Case" unique_id=90497384]
 position = Vector2(212, 256)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_t436j")
 
-[node name="A" type="TextureButton" parent="." unique_id=1042689272]
+[node name="A" type="TextureButton" parent="Case" unique_id=1042689272]
 offset_left = 102.0
 offset_top = 395.0
 offset_right = 282.0
 offset_bottom = 575.0
 scale = Vector2(0.374, 0.374)
-texture_normal = ExtResource("4_8tse4")
+texture_normal = ExtResource("4_kstfn")
+texture_pressed = ExtResource("5_xlg61")
+texture_hover = ExtResource("6_aagdy")
 
-[node name="B" type="TextureButton" parent="." unique_id=952899614]
-offset_left = 250.4
-offset_top = 395.0
-offset_right = 430.4001
-offset_bottom = 575.0
-scale = Vector2(0.375, 0.375)
-texture_normal = ExtResource("4_8tse4")
-
-[node name="C" type="TextureButton" parent="." unique_id=1385879338]
+[node name="B" type="TextureButton" parent="Case" unique_id=1385879338]
 offset_left = 174.0
 offset_top = 405.0
 offset_right = 354.0
 offset_bottom = 585.0
 scale = Vector2(0.4, 0.4)
-texture_normal = ExtResource("4_8tse4")
+texture_normal = ExtResource("4_kstfn")
+texture_pressed = ExtResource("5_xlg61")
+texture_hover = ExtResource("6_aagdy")
+
+[node name="C" type="TextureButton" parent="Case" unique_id=952899614]
+offset_left = 250.4
+offset_top = 395.0
+offset_right = 430.4001
+offset_bottom = 575.0
+scale = Vector2(0.375, 0.375)
+texture_normal = ExtResource("4_kstfn")
+texture_pressed = ExtResource("5_xlg61")
+texture_hover = ExtResource("6_aagdy")
+
+[connection signal="button_up" from="Case/A" to="Icons/SelectControl" method="_on_a_button_up"]
+[connection signal="button_up" from="Case/B" to="Icons/SelectControl" method="_on_b_button_up"]
+[connection signal="button_up" from="Case/C" to="Icons/SelectControl" method="_on_c_button_up"]
