@@ -7,10 +7,10 @@ func _ready() -> void:
 	get_window().mouse_passthrough = false
 
 func _input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("LClick"):
+	if Input.is_action_just_pressed("RClick"):
 		dragging = true
 		offset = get_viewport().get_mouse_position()
-	if Input.is_action_just_released("LClick"):
+	if Input.is_action_just_released("RClick"):
 		dragging = false
 		offset = Vector2.ZERO
 	if dragging:
