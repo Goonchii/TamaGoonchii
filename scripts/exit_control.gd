@@ -4,8 +4,8 @@ extends Node2D
 @onready var exit_layer: CanvasGroup = get_node("/root/TamaGoonchii/Screen/Exit")
 
 @onready var arrow_label: Label = get_node("/root/TamaGoonchii/Screen/Exit/Arrow")
-@onready var yes_label: Label = get_node("/root/TamaGoonchii/Screen/Exit/Yes")
-@onready var no_label: Label = get_node("/root/TamaGoonchii/Screen/Exit/No")
+@onready var yes_label: Label = get_node("/root/TamaGoonchii/Screen/Exit/VBoxContainer/Yes")
+@onready var no_label: Label = get_node("/root/TamaGoonchii/Screen/Exit/VBoxContainer/No")
 
 var exit_active: bool = false
 var exit_index: int = 0
