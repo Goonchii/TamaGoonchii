@@ -49,7 +49,6 @@ texture = ExtResource("2_t4b6s")
 centered = false
 
 [node name="Icons" type="CanvasGroup" parent="Screen" unique_id=1733243191]
-visible = false
 
 [node name="SelectControl" type="Node2D" parent="Screen/Icons" unique_id=196078883]
 script = ExtResource("5_81wvq")
@@ -100,6 +99,7 @@ texture = ExtResource("11_su65o")
 centered = false
 
 [node name="Exit" type="CanvasGroup" parent="Screen" unique_id=1489239088]
+visible = false
 
 [node name="ExitControl" type="Node2D" parent="Screen/Exit" unique_id=1415482312]
 script = ExtResource("14_a7k32")
