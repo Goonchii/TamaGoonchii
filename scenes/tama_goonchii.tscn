@@ -18,6 +18,9 @@
 [ext_resource type="Texture2D" uid="uid://dbxooj88spavq" path="res://assets/temp status icon.png" id="10_aymvy"]
 [ext_resource type="Texture2D" uid="uid://d3akg224vg052" path="res://assets/temp menu icon.png" id="11_su65o"]
 [ext_resource type="Texture2D" uid="uid://ochg0bhpabhn" path="res://assets/icon bars.png" id="13_81wvq"]
+[ext_resource type="Script" uid="uid://cb0n022u7hwut" path="res://scripts/exit_control.gd" id="14_a7k32"]
+[ext_resource type="Theme" uid="uid://do7r8aj5cis23" path="res://themes/large_text.tres" id="14_njl1l"]
+[ext_resource type="Theme" uid="uid://cl24q2htnt7rx" path="res://themes/small_text.tres" id="15_a7k32"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qq0sh"]
 shader = ExtResource("4_aagdy")
@@ -45,63 +48,100 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_t4b6s")
 centered = false
 
-[node name="Icons" type="CanvasLayer" parent="." unique_id=279720056]
+[node name="Icons" type="CanvasGroup" parent="Screen" unique_id=1733243191]
 visible = false
 
-[node name="SelectControl" type="Node2D" parent="Icons" unique_id=196078883]
+[node name="SelectControl" type="Node2D" parent="Screen/Icons" unique_id=196078883]
 script = ExtResource("5_81wvq")
 
-[node name="IconBars" type="Sprite2D" parent="Icons" unique_id=768868381]
+[node name="IconBars" type="Sprite2D" parent="Screen/Icons" unique_id=768868381]
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("13_81wvq")
 centered = false
 
-[node name="Shader" type="ColorRect" parent="Icons" unique_id=1371273175]
+[node name="FeedIcon" type="Sprite2D" parent="Screen/Icons" unique_id=1773870143 groups=["Icons"]]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_dd1l7")
+centered = false
+
+[node name="PlayIcon" type="Sprite2D" parent="Screen/Icons" unique_id=1224331784 groups=["Icons"]]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_7es38")
+centered = false
+
+[node name="CleanIcon" type="Sprite2D" parent="Screen/Icons" unique_id=1173755202 groups=["Icons"]]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_81wvq")
+centered = false
+
+[node name="SleepIcon" type="Sprite2D" parent="Screen/Icons" unique_id=633691814 groups=["Icons"]]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("7_jnjx7")
+centered = false
+
+[node name="ShovelIcon" type="Sprite2D" parent="Screen/Icons" unique_id=554348708 groups=["Icons"]]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_njl1l")
+centered = false
+
+[node name="MedicineIcon" type="Sprite2D" parent="Screen/Icons" unique_id=2080944064 groups=["Icons"]]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_a7k32")
+centered = false
+
+[node name="StatusIcon" type="Sprite2D" parent="Screen/Icons" unique_id=1583475102 groups=["Icons"]]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("10_aymvy")
+centered = false
+
+[node name="MenuIcon" type="Sprite2D" parent="Screen/Icons" unique_id=631739665 groups=["Icons"]]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("11_su65o")
+centered = false
+
+[node name="Exit" type="CanvasGroup" parent="Screen" unique_id=1489239088]
+
+[node name="ExitControl" type="Node2D" parent="Screen/Exit" unique_id=1415482312]
+script = ExtResource("14_a7k32")
+
+[node name="Exit" type="Label" parent="Screen/Exit" unique_id=1295139587]
+offset_left = 130.0
+offset_top = 160.0
+offset_right = 293.0
+offset_bottom = 240.0
+theme = ExtResource("14_njl1l")
+text = "Exit?"
+
+[node name="Yes" type="Label" parent="Screen/Exit" unique_id=1817963617]
+offset_left = 140.0
+offset_top = 230.0
+offset_right = 219.0
+offset_bottom = 286.0
+theme = ExtResource("15_a7k32")
+text = "Yes"
+
+[node name="No" type="Label" parent="Screen/Exit" unique_id=665758829]
+offset_left = 140.0
+offset_top = 270.0
+offset_right = 193.0
+offset_bottom = 326.0
+theme = ExtResource("15_a7k32")
+text = "No"
+
+[node name="Arrow" type="Label" parent="Screen/Exit" unique_id=65459553]
+offset_left = 120.0
+offset_top = 230.0
+offset_right = 138.0
+offset_bottom = 286.0
+theme = ExtResource("15_a7k32")
+text = ">"
+
+[node name="Shader" type="ColorRect" parent="Screen" unique_id=1371273175]
 material = SubResource("ShaderMaterial_qq0sh")
 offset_left = 62.0
 offset_top = 116.0
 offset_right = 360.0
 offset_bottom = 397.0
-
-[node name="FeedIcon" type="Sprite2D" parent="Icons" unique_id=1773870143 groups=["Icons"]]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("4_dd1l7")
-centered = false
-
-[node name="PlayIcon" type="Sprite2D" parent="Icons" unique_id=1224331784 groups=["Icons"]]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("5_7es38")
-centered = false
-
-[node name="CleanIcon" type="Sprite2D" parent="Icons" unique_id=1173755202 groups=["Icons"]]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("6_81wvq")
-centered = false
-
-[node name="SleepIcon" type="Sprite2D" parent="Icons" unique_id=633691814 groups=["Icons"]]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("7_jnjx7")
-centered = false
-
-[node name="ShovelIcon" type="Sprite2D" parent="Icons" unique_id=554348708 groups=["Icons"]]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("8_njl1l")
-centered = false
-
-[node name="MedicineIcon" type="Sprite2D" parent="Icons" unique_id=2080944064 groups=["Icons"]]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("9_a7k32")
-centered = false
-
-[node name="StatusIcon" type="Sprite2D" parent="Icons" unique_id=1583475102 groups=["Icons"]]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("10_aymvy")
-centered = false
-
-[node name="MenuIcon" type="Sprite2D" parent="Icons" unique_id=631739665 groups=["Icons"]]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("11_su65o")
-centered = false
 
 [node name="Case" type="CanvasLayer" parent="." unique_id=970157117]
 
@@ -140,6 +180,8 @@ texture_normal = ExtResource("4_kstfn")
 texture_pressed = ExtResource("5_xlg61")
 texture_hover = ExtResource("6_aagdy")
 
-[connection signal="button_up" from="Case/A" to="Icons/SelectControl" method="_on_a_button_up"]
-[connection signal="button_up" from="Case/B" to="Icons/SelectControl" method="_on_b_button_up"]
-[connection signal="button_up" from="Case/C" to="Icons/SelectControl" method="_on_c_button_up"]
+[connection signal="button_up" from="Case/A" to="Screen/Icons/SelectControl" method="_on_a_button_up"]
+[connection signal="button_up" from="Case/A" to="Screen/Exit/ExitControl" method="_on_a_button_up"]
+[connection signal="button_up" from="Case/B" to="Screen/Icons/SelectControl" method="_on_b_button_up"]
+[connection signal="button_up" from="Case/B" to="Screen/Exit/ExitControl" method="_on_b_button_up"]
+[connection signal="button_up" from="Case/C" to="Screen/Icons/SelectControl" method="_on_c_button_up"]
