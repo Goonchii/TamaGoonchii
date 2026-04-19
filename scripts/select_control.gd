@@ -11,7 +11,6 @@ var icons: Array = []
 
 func _ready() -> void:
 	# TODO: Move this later
-	# TODO: Add H+V boxes for icons/screen
 	activate_main()
 	Global.hide_layers()
 	

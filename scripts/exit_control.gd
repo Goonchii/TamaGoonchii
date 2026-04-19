@@ -11,8 +11,6 @@ var exit_active: bool = false
 var exit_index: int = 0
 var exit_items: Array[Label] = []
 
-# TODO: Add H/Vboxes for menu
-
 func _on_a_button_up() -> void:
 	if not Global.a_active: return
 	if exit_active:
