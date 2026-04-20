@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dbxooj88spavq"
-path="res://.godot/imported/temp status icon.png-614db1876c68262fc05b73d82e3954f2.ctex"
+path="res://.godot/imported/temp status icon.png-cecd6631d6343cc2a43fb62fd13b7b35.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/temp status icon.png"
-dest_files=["res://.godot/imported/temp status icon.png-614db1876c68262fc05b73d82e3954f2.ctex"]
+source_file="res://assets/Temp Icons/temp status icon.png"
+dest_files=["res://.godot/imported/temp status icon.png-cecd6631d6343cc2a43fb62fd13b7b35.ctex"]
 
 [params]
 
