@@ -68,7 +68,6 @@ func feed_drink(hunger_increase) -> void:
 	print("Hunger is now : ", hunger)
 
 func _on_tama_sprite_animation_finished() -> void:
-	# TODO: Fix this (not getting arg ^)
 	var anim_name = tama_sprite.animation
 	print("Anim finished :", anim_name)
 	if anim_name in ["feedfood", "feeddrink"]:
