@@ -7,32 +7,47 @@
 [ext_resource type="Shader" uid="uid://b1b6vv22luat6" path="res://shaders/screen.gdshader" id="4_aagdy"]
 [ext_resource type="Texture2D" uid="uid://btm4pseu8qtip" path="res://assets/Temp Icons/temp feed icon.png" id="4_dd1l7"]
 [ext_resource type="Texture2D" uid="uid://d2vh75criwr60" path="res://assets/Case/button normal.png" id="4_kstfn"]
-[ext_resource type="Texture2D" uid="uid://cud0nqlr16u0r" path="res://assets/Sprite/Bored1.png" id="4_mynss"]
+[ext_resource type="Texture2D" uid="uid://hy6e17foxrf4" path="res://assets/Sprite/Bored1.png" id="4_mynss"]
 [ext_resource type="Texture2D" uid="uid://db2jpywh77guu" path="res://assets/Temp Icons/temp play icon.png" id="5_7es38"]
 [ext_resource type="Script" uid="uid://bvvl7pycavosu" path="res://scripts/select_control.gd" id="5_81wvq"]
-[ext_resource type="Texture2D" uid="uid://cn2o1q8f5o12y" path="res://assets/Sprite/Bored2.png" id="5_fi5sx"]
+[ext_resource type="Texture2D" uid="uid://hu84tm5mu5w3" path="res://assets/Sprite/Bored2.png" id="5_fi5sx"]
 [ext_resource type="Texture2D" uid="uid://cgol7gslefhui" path="res://assets/Case/button pressed.png" id="5_xlg61"]
+[ext_resource type="Texture2D" uid="uid://ms8lxkgpyfmm" path="res://assets/Sprite/Clean1.png" id="6_5n8p3"]
 [ext_resource type="Texture2D" uid="uid://drdqvdm53wq5o" path="res://assets/Temp Icons/temp clean icon.png" id="6_81wvq"]
 [ext_resource type="Texture2D" uid="uid://bsj1a4d7td02j" path="res://assets/Case/button hover.png" id="6_aagdy"]
-[ext_resource type="Texture2D" uid="uid://q2ek4jcca77h" path="res://assets/Sprite/Default1.png" id="6_rfc70"]
-[ext_resource type="Texture2D" uid="uid://dwl6a3j3p3rdh" path="res://assets/Sprite/Default2.png" id="7_gkki5"]
+[ext_resource type="Texture2D" uid="uid://bnaw0ltolb73q" path="res://assets/Sprite/Default1.png" id="6_rfc70"]
+[ext_resource type="Texture2D" uid="uid://c7oapqr65agd8" path="res://assets/Sprite/Clean2.png" id="7_4a43s"]
+[ext_resource type="Texture2D" uid="uid://cjqrmpo1wv58b" path="res://assets/Sprite/Default2.png" id="7_gkki5"]
 [ext_resource type="Texture2D" uid="uid://bue16u65rqf8y" path="res://assets/Temp Icons/temp sleep icon.png" id="7_jnjx7"]
-[ext_resource type="Texture2D" uid="uid://dpp2mjbpo4eci" path="res://assets/Sprite/Dirty1.png" id="8_3abdp"]
+[ext_resource type="Texture2D" uid="uid://c8ci2818wqljo" path="res://assets/Sprite/Dirty1.png" id="8_3abdp"]
+[ext_resource type="Texture2D" uid="uid://hfbxjw40ip75" path="res://assets/Sprite/Clean3.png" id="8_eh4gw"]
 [ext_resource type="Texture2D" uid="uid://bbaw56j0nrtic" path="res://assets/Temp Icons/temp shovel icon.png" id="8_njl1l"]
 [ext_resource type="Texture2D" uid="uid://c7ehknb13q0il" path="res://assets/Temp Icons/temp med icon.png" id="9_a7k32"]
-[ext_resource type="Texture2D" uid="uid://ce2pi2jtklyap" path="res://assets/Sprite/Dirty2.png" id="9_kvy8a"]
-[ext_resource type="Texture2D" uid="uid://bchppwqv0f7f3" path="res://assets/Sprite/Hungry1.png" id="10_5pv2q"]
+[ext_resource type="Texture2D" uid="uid://dgl1b8ggebv6v" path="res://assets/Sprite/Dirty2.png" id="9_kvy8a"]
+[ext_resource type="Texture2D" uid="uid://dddl36wuypgwb" path="res://assets/Sprite/Clean4.png" id="9_ky4mf"]
+[ext_resource type="Texture2D" uid="uid://bh46iaqppxlb0" path="res://assets/Sprite/Hungry1.png" id="10_5pv2q"]
 [ext_resource type="Texture2D" uid="uid://dbxooj88spavq" path="res://assets/Temp Icons/temp status icon.png" id="10_aymvy"]
-[ext_resource type="Texture2D" uid="uid://d4mlyafmbdjk8" path="res://assets/Sprite/Hungry2.png" id="11_fdtir"]
+[ext_resource type="Texture2D" uid="uid://d0gfdpec5alsj" path="res://assets/Sprite/Feed1.png" id="10_kvy8a"]
+[ext_resource type="Texture2D" uid="uid://cme7s6td1ife6" path="res://assets/Sprite/Clean5.png" id="10_swvw2"]
+[ext_resource type="Texture2D" uid="uid://wk016ipjyhue" path="res://assets/Sprite/Feed2.png" id="11_5pv2q"]
+[ext_resource type="Texture2D" uid="uid://wa2ut7331k0u" path="res://assets/Sprite/Clean6.png" id="11_8bvg7"]
+[ext_resource type="Texture2D" uid="uid://6dworsal4lpg" path="res://assets/Sprite/Hungry2.png" id="11_fdtir"]
 [ext_resource type="Texture2D" uid="uid://d3akg224vg052" path="res://assets/Temp Icons/temp menu icon.png" id="11_su65o"]
-[ext_resource type="Texture2D" uid="uid://pbotxa27o6te" path="res://assets/Sprite/Sick1.png" id="12_l42gy"]
-[ext_resource type="Texture2D" uid="uid://cycs3r88mh2lg" path="res://assets/Sprite/Sick2.png" id="13_5xtr0"]
+[ext_resource type="Texture2D" uid="uid://c4l63elk5cxk8" path="res://assets/Sprite/Feed3.png" id="12_fdtir"]
+[ext_resource type="Texture2D" uid="uid://dcevkkluh3uhk" path="res://assets/Sprite/Sick1.png" id="12_l42gy"]
+[ext_resource type="Texture2D" uid="uid://bl3yeka86davg" path="res://assets/Sprite/Clean7.png" id="12_lf2kp"]
+[ext_resource type="Texture2D" uid="uid://hi1ko1k53jqs" path="res://assets/Sprite/Sick2.png" id="13_5xtr0"]
 [ext_resource type="Texture2D" uid="uid://ochg0bhpabhn" path="res://assets/Case/icon bars.png" id="13_81wvq"]
+[ext_resource type="Texture2D" uid="uid://bsnjul08031oo" path="res://assets/Sprite/Feed4.png" id="13_l42gy"]
+[ext_resource type="Texture2D" uid="uid://dsvhrpypvwp4x" path="res://assets/Sprite/Clean8.png" id="13_yyhul"]
+[ext_resource type="Texture2D" uid="uid://ce6hukb1ouewu" path="res://assets/Sprite/Feed5.png" id="14_5xtr0"]
 [ext_resource type="Script" uid="uid://cb0n022u7hwut" path="res://scripts/exit_control.gd" id="14_a7k32"]
-[ext_resource type="Texture2D" uid="uid://bstqhiiue35fm" path="res://assets/Sprite/Tired1.png" id="14_kajtc"]
+[ext_resource type="Texture2D" uid="uid://dyafqndlibgvy" path="res://assets/Sprite/Clean9.png" id="14_f3c2a"]
+[ext_resource type="Texture2D" uid="uid://n5s3ja412w0j" path="res://assets/Sprite/Tired1.png" id="14_kajtc"]
 [ext_resource type="Theme" uid="uid://do7r8aj5cis23" path="res://themes/large_text.tres" id="14_njl1l"]
 [ext_resource type="Theme" uid="uid://cl24q2htnt7rx" path="res://themes/small_text.tres" id="15_a7k32"]
-[ext_resource type="Texture2D" uid="uid://dd6pj4k4qdb58" path="res://assets/Sprite/Tired2.png" id="15_hlevq"]
+[ext_resource type="Texture2D" uid="uid://hsybwoyxp3bx" path="res://assets/Sprite/Clean10.png" id="15_e0snb"]
+[ext_resource type="Texture2D" uid="uid://cp24bu7woopix" path="res://assets/Sprite/Tired2.png" id="15_hlevq"]
 [ext_resource type="Script" uid="uid://0d8nq6bh5jik" path="res://scripts/feed_control.gd" id="29_mynss"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hlevq"]
@@ -46,6 +61,41 @@ animations = [{
 }],
 "loop": true,
 "name": &"bored",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("6_5n8p3")
+}, {
+"duration": 3.0,
+"texture": ExtResource("7_4a43s")
+}, {
+"duration": 3.0,
+"texture": ExtResource("8_eh4gw")
+}, {
+"duration": 3.0,
+"texture": ExtResource("9_ky4mf")
+}, {
+"duration": 3.0,
+"texture": ExtResource("10_swvw2")
+}, {
+"duration": 3.0,
+"texture": ExtResource("11_8bvg7")
+}, {
+"duration": 3.0,
+"texture": ExtResource("12_lf2kp")
+}, {
+"duration": 3.0,
+"texture": ExtResource("13_yyhul")
+}, {
+"duration": 3.0,
+"texture": ExtResource("14_f3c2a")
+}, {
+"duration": 3.0,
+"texture": ExtResource("15_e0snb")
+}],
+"loop": true,
+"name": &"clean",
 "speed": 5.0
 }, {
 "frames": [{
@@ -72,16 +122,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 3.0,
-"texture": ExtResource("14_kajtc")
+"texture": ExtResource("10_kvy8a")
 }, {
 "duration": 3.0,
-"texture": ExtResource("15_hlevq")
+"texture": ExtResource("11_5pv2q")
 }, {
 "duration": 3.0,
-"texture": ExtResource("14_kajtc")
+"texture": ExtResource("12_fdtir")
 }, {
 "duration": 3.0,
-"texture": ExtResource("15_hlevq")
+"texture": ExtResource("13_l42gy")
+}, {
+"duration": 3.0,
+"texture": ExtResource("14_5xtr0")
 }],
 "loop": false,
 "name": &"feedmeal",
@@ -165,16 +218,14 @@ texture = ExtResource("2_t4b6s")
 centered = false
 
 [node name="TamaSprite" type="AnimatedSprite2D" parent="Screen" unique_id=103181815]
-visible = false
 self_modulate = Color(1, 1, 1, 0.69411767)
 texture_filter = 1
-position = Vector2(215, 255)
+position = Vector2(215, 250)
 scale = Vector2(4.8125, 4.8125)
 sprite_frames = SubResource("SpriteFrames_hlevq")
-animation = &"feedsnack"
+animation = &"feedmeal"
 
 [node name="Icons" type="CanvasGroup" parent="Screen" unique_id=1733243191]
-visible = false
 
 [node name="SelectControl" type="Node2D" parent="Screen/Icons" unique_id=196078883]
 script = ExtResource("5_81wvq")
