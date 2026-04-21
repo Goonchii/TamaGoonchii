@@ -5,8 +5,8 @@ extends Node2D
 @onready var feed_layer: CanvasGroup = get_node("/root/TamaGoonchii/Screen/FeedMenu")
 
 @onready var arrow_label: Label = get_node("/root/TamaGoonchii/Screen/FeedMenu/Arrow")
-@onready var meal_label: Label = get_node("/root/TamaGoonchii/Screen/FeedMenu/VBoxContainer/Meal")
-@onready var snack_label: Label = get_node("/root/TamaGoonchii/Screen/FeedMenu/VBoxContainer/Snack")
+@onready var food_label: Label = get_node("/root/TamaGoonchii/Screen/FeedMenu/VBoxContainer/Food")
+@onready var drink_label: Label = get_node("/root/TamaGoonchii/Screen/FeedMenu/VBoxContainer/Drink")
 
 var feed_active: bool = false
 var feed_index: int = 0
@@ -23,15 +23,15 @@ func _on_b_button_up() -> void:
 	if feed_active:
 		print("Selected: ", feed_index)
 		if feed_index == 0:
-			print("Feeding meal")
+			print("Feeding food")
 			deactivate_feed()
 			main.activate_main()
-			tama_controller.feed_meal(3)
+			tama_controller.feed_food(3)
 		else: if feed_index == 1:
-			print("Feeding snack")
+			print("Feeding drink")
 			deactivate_feed()
 			main.activate_main()
-			tama_controller.feed_snack(1)
+			tama_controller.feed_drink(1)
 
 func _on_c_button_up() -> void:
 	if feed_active:
@@ -41,7 +41,7 @@ func _on_c_button_up() -> void:
 func feed_menu() -> void:
 	feed_layer.show()
 	feed_active = true
-	feed_items = [meal_label, snack_label]
+	feed_items = [food_label, drink_label]
 	feed_index = 0
 	move_arrow()
 	await get_tree().process_frame

@@ -56,21 +56,21 @@ func boredom_timeout() -> void:
 		update_animation()
 
 
-func feed_meal(hunger_increase) -> void:
+func feed_food(hunger_increase) -> void:
 	is_feeding = true
 	hunger = clamp(hunger + hunger_increase, MIN_HUNGER, MAX_HUNGER)
-	tama_sprite.play("feedmeal")
+	tama_sprite.play("feedfood")
 	print("Hunger is now : ", hunger)
-func feed_snack(hunger_increase) -> void:
+func feed_drink(hunger_increase) -> void:
 	is_feeding = true
 	hunger = clamp(hunger + hunger_increase, MIN_HUNGER, MAX_HUNGER)
-	tama_sprite.play("feedsnack")
+	tama_sprite.play("feeddrink")
 	print("Hunger is now : ", hunger)
 
 func _on_tama_sprite_animation_finished() -> void:
 	# TODO: Fix this (not getting arg ^)
 	var anim_name = tama_sprite.animation
 	print("Anim finished :", anim_name)
-	if anim_name in ["feedmeal", "feedsnack"]:
+	if anim_name in ["feedfood", "feeddrink"]:
 		is_feeding = false
 		update_animation()
