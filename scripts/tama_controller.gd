@@ -59,7 +59,7 @@ func feed_snack(hunger_increase) -> void:
 	tama_sprite.play("feedsnack")
 	print("Hunger is now : ", hunger)
 
-func _on_tama_sprite_animation_finished(animation) -> void:
+func _on_tama_sprite_animation_finished(anim_name) -> void:
 	# TODO: Fix this (not getting arg ^)
-	if animation == "feedmeal" || "feedsnack":
+	if anim_name == "feedmeal" || "feedsnack":
 		update_animation()
