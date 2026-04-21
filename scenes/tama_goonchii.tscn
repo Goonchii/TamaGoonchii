@@ -5,22 +5,103 @@
 [ext_resource type="Texture2D" uid="uid://ciamu3elbyisk" path="res://assets/Case/case.png" id="2_t436j"]
 [ext_resource type="Script" uid="uid://bmgdhtgv8as0t" path="res://scripts/tama_controller.gd" id="2_xlg61"]
 [ext_resource type="Shader" uid="uid://b1b6vv22luat6" path="res://shaders/screen.gdshader" id="4_aagdy"]
+[ext_resource type="Texture2D" uid="uid://dtnayglncqlsu" path="res://assets/Sprite/TamaGoonchii5.png" id="4_b435l"]
 [ext_resource type="Texture2D" uid="uid://btm4pseu8qtip" path="res://assets/Temp Icons/temp feed icon.png" id="4_dd1l7"]
 [ext_resource type="Texture2D" uid="uid://d2vh75criwr60" path="res://assets/Case/button normal.png" id="4_kstfn"]
 [ext_resource type="Texture2D" uid="uid://db2jpywh77guu" path="res://assets/Temp Icons/temp play icon.png" id="5_7es38"]
 [ext_resource type="Script" uid="uid://bvvl7pycavosu" path="res://scripts/select_control.gd" id="5_81wvq"]
+[ext_resource type="Texture2D" uid="uid://ce07s37jho5ny" path="res://assets/Sprite/TamaGoonchii6.png" id="5_mynss"]
 [ext_resource type="Texture2D" uid="uid://cgol7gslefhui" path="res://assets/Case/button pressed.png" id="5_xlg61"]
 [ext_resource type="Texture2D" uid="uid://drdqvdm53wq5o" path="res://assets/Temp Icons/temp clean icon.png" id="6_81wvq"]
 [ext_resource type="Texture2D" uid="uid://bsj1a4d7td02j" path="res://assets/Case/button hover.png" id="6_aagdy"]
+[ext_resource type="Texture2D" uid="uid://d2gh1j4d7g85b" path="res://assets/Sprite/TamaGoonchii1.png" id="6_fi5sx"]
 [ext_resource type="Texture2D" uid="uid://bue16u65rqf8y" path="res://assets/Temp Icons/temp sleep icon.png" id="7_jnjx7"]
+[ext_resource type="Texture2D" uid="uid://bujh3cnmkyxb5" path="res://assets/Sprite/TamaGoonchii2.png" id="7_rfc70"]
+[ext_resource type="Texture2D" uid="uid://beu3ohwttivx8" path="res://assets/Sprite/TamaGoonchii7.png" id="8_gkki5"]
 [ext_resource type="Texture2D" uid="uid://bbaw56j0nrtic" path="res://assets/Temp Icons/temp shovel icon.png" id="8_njl1l"]
+[ext_resource type="Texture2D" uid="uid://b0rtdy8sep7im" path="res://assets/Sprite/TamaGoonchii8.png" id="9_3abdp"]
 [ext_resource type="Texture2D" uid="uid://c7ehknb13q0il" path="res://assets/Temp Icons/temp med icon.png" id="9_a7k32"]
 [ext_resource type="Texture2D" uid="uid://dbxooj88spavq" path="res://assets/Temp Icons/temp status icon.png" id="10_aymvy"]
+[ext_resource type="Texture2D" uid="uid://dr0fdwpiihywj" path="res://assets/Sprite/TamaGoonchii3.png" id="10_kvy8a"]
+[ext_resource type="Texture2D" uid="uid://cewet4uyt1e4w" path="res://assets/Sprite/TamaGoonchii4.png" id="11_5pv2q"]
 [ext_resource type="Texture2D" uid="uid://d3akg224vg052" path="res://assets/Temp Icons/temp menu icon.png" id="11_su65o"]
+[ext_resource type="Texture2D" uid="uid://c8560jlsac4jk" path="res://assets/Sprite/TamaGoonchii11.png" id="12_fdtir"]
 [ext_resource type="Texture2D" uid="uid://ochg0bhpabhn" path="res://assets/Case/icon bars.png" id="13_81wvq"]
+[ext_resource type="Texture2D" uid="uid://do3m5n44h8k5t" path="res://assets/Sprite/TamaGoonchii12.png" id="13_l42gy"]
+[ext_resource type="Texture2D" uid="uid://bai603e06ey41" path="res://assets/Sprite/TamaGoonchii9.png" id="14_5xtr0"]
 [ext_resource type="Script" uid="uid://cb0n022u7hwut" path="res://scripts/exit_control.gd" id="14_a7k32"]
 [ext_resource type="Theme" uid="uid://do7r8aj5cis23" path="res://themes/large_text.tres" id="14_njl1l"]
 [ext_resource type="Theme" uid="uid://cl24q2htnt7rx" path="res://themes/small_text.tres" id="15_a7k32"]
+[ext_resource type="Texture2D" uid="uid://dobis0r01sdb8" path="res://assets/Sprite/TamaGoonchii10.png" id="15_kajtc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hlevq"]
+animations = [{
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("4_b435l")
+}, {
+"duration": 3.0,
+"texture": ExtResource("5_mynss")
+}],
+"loop": true,
+"name": &"bored",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("6_fi5sx")
+}, {
+"duration": 3.0,
+"texture": ExtResource("7_rfc70")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("8_gkki5")
+}, {
+"duration": 3.0,
+"texture": ExtResource("9_3abdp")
+}],
+"loop": true,
+"name": &"dirty",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("10_kvy8a")
+}, {
+"duration": 3.0,
+"texture": ExtResource("11_5pv2q")
+}],
+"loop": true,
+"name": &"hungry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("12_fdtir")
+}, {
+"duration": 3.0,
+"texture": ExtResource("13_l42gy")
+}],
+"loop": true,
+"name": &"sick",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("14_5xtr0")
+}, {
+"duration": 3.0,
+"texture": ExtResource("15_kajtc")
+}],
+"loop": true,
+"name": &"tired",
+"speed": 5.0
+}]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qq0sh"]
 shader = ExtResource("4_aagdy")
@@ -33,13 +114,13 @@ script = ExtResource("1_t436j")
 script = ExtResource("2_xlg61")
 
 [node name="HungerTimer" type="Timer" parent="TamaController" unique_id=1423488531]
-wait_time = 60.0
+wait_time = 3.0
 
 [node name="DirtyTimer" type="Timer" parent="TamaController" unique_id=1766672064]
-wait_time = 120.0
+wait_time = 6.0
 
 [node name="BoredomTimer" type="Timer" parent="TamaController" unique_id=799552296]
-wait_time = 90.0
+wait_time = 4.5
 
 [node name="Screen" type="CanvasLayer" parent="." unique_id=2130259119]
 
@@ -47,6 +128,15 @@ wait_time = 90.0
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_t4b6s")
 centered = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Screen" unique_id=103181815]
+self_modulate = Color(1, 1, 1, 0.69411767)
+texture_filter = 1
+position = Vector2(215, 255)
+scale = Vector2(4.8125, 4.8125)
+sprite_frames = SubResource("SpriteFrames_hlevq")
+animation = &"bored"
+frame_progress = 0.21712011
 
 [node name="Icons" type="CanvasGroup" parent="Screen" unique_id=1733243191]
 
