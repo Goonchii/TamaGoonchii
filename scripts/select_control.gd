@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var icons_layer: CanvasGroup = get_node("/root/TamaGoonchii/Screen/Icons")
+@onready var tama_sprite: AnimatedSprite2D = get_node("/root/TamaGoonchii/Screen/TamaSprite")
 
 @onready var exit_control: Node2D = get_node("/root/TamaGoonchii/Screen/Exit/ExitControl")
 @onready var feed_control: Node2D = get_node("/root/TamaGoonchii/Screen/FeedMenu/FeedControl")
@@ -65,12 +66,14 @@ func _on_c_button_up() -> void:
 
 func activate_main() -> void:
 	icons_layer.show()
+	tama_sprite.show()
 	main_is_active = true
 	Global.a_active = true
 	Global.b_active = true
 	Global.c_active = true
 func deactivate_main() -> void:
 	icons_layer.hide()
+	tama_sprite.hide()
 	main_is_active = false
 	Global.a_active = false
 	Global.b_active = false

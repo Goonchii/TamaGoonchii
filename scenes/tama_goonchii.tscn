@@ -70,9 +70,38 @@ animations = [{
 "name": &"dirty",
 "speed": 5.0
 }, {
-"frames": [],
-"loop": true,
-"name": &"feed",
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("14_kajtc")
+}, {
+"duration": 3.0,
+"texture": ExtResource("15_hlevq")
+}, {
+"duration": 3.0,
+"texture": ExtResource("14_kajtc")
+}, {
+"duration": 3.0,
+"texture": ExtResource("15_hlevq")
+}],
+"loop": false,
+"name": &"feedmeal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("8_3abdp")
+}, {
+"duration": 3.0,
+"texture": ExtResource("12_l42gy")
+}, {
+"duration": 3.0,
+"texture": ExtResource("8_3abdp")
+}, {
+"duration": 3.0,
+"texture": ExtResource("12_l42gy")
+}],
+"loop": false,
+"name": &"feedsnack",
 "speed": 5.0
 }, {
 "frames": [{
@@ -135,15 +164,17 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_t4b6s")
 centered = false
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Screen" unique_id=103181815]
+[node name="TamaSprite" type="AnimatedSprite2D" parent="Screen" unique_id=103181815]
+visible = false
 self_modulate = Color(1, 1, 1, 0.69411767)
 texture_filter = 1
 position = Vector2(215, 255)
 scale = Vector2(4.8125, 4.8125)
 sprite_frames = SubResource("SpriteFrames_hlevq")
-animation = &"tired"
+animation = &"feedsnack"
 
 [node name="Icons" type="CanvasGroup" parent="Screen" unique_id=1733243191]
+visible = false
 
 [node name="SelectControl" type="Node2D" parent="Screen/Icons" unique_id=196078883]
 script = ExtResource("5_81wvq")
@@ -232,6 +263,45 @@ layout_mode = 2
 theme = ExtResource("15_a7k32")
 text = "No"
 
+[node name="FeedMenu" type="CanvasGroup" parent="Screen" unique_id=1787267938]
+visible = false
+
+[node name="FeedControl" type="Node2D" parent="Screen/FeedMenu" unique_id=1336935630]
+script = ExtResource("29_mynss")
+
+[node name="FeedTama" type="Label" parent="Screen/FeedMenu" unique_id=762743373]
+offset_left = 90.0
+offset_top = 150.0
+offset_right = 328.0
+offset_bottom = 230.0
+theme = ExtResource("14_njl1l")
+text = "Choose:"
+
+[node name="Arrow" type="Label" parent="Screen/FeedMenu" unique_id=717838672]
+offset_left = 120.0
+offset_top = 220.0
+offset_right = 138.0
+offset_bottom = 276.0
+theme = ExtResource("15_a7k32")
+text = ">"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Screen/FeedMenu" unique_id=711843746]
+offset_left = 140.0
+offset_top = 220.0
+offset_right = 303.0
+offset_bottom = 420.0
+theme_override_constants/separation = -9
+
+[node name="Meal" type="Label" parent="Screen/FeedMenu/VBoxContainer" unique_id=803381954]
+layout_mode = 2
+theme = ExtResource("15_a7k32")
+text = "Meal"
+
+[node name="Snack" type="Label" parent="Screen/FeedMenu/VBoxContainer" unique_id=676804711]
+layout_mode = 2
+theme = ExtResource("15_a7k32")
+text = "Snack"
+
 [node name="Shader" type="ColorRect" parent="Screen" unique_id=1371273175]
 material = SubResource("ShaderMaterial_qq0sh")
 offset_left = 62.0
@@ -276,8 +346,12 @@ texture_normal = ExtResource("4_kstfn")
 texture_pressed = ExtResource("5_xlg61")
 texture_hover = ExtResource("6_aagdy")
 
+[connection signal="animation_finished" from="Screen/TamaSprite" to="TamaController" method="_on_tama_sprite_animation_finished"]
 [connection signal="button_up" from="Case/A" to="Screen/Icons/SelectControl" method="_on_a_button_up"]
 [connection signal="button_up" from="Case/A" to="Screen/Exit/ExitControl" method="_on_a_button_up"]
+[connection signal="button_up" from="Case/A" to="Screen/FeedMenu/FeedControl" method="_on_a_button_up"]
 [connection signal="button_up" from="Case/B" to="Screen/Icons/SelectControl" method="_on_b_button_up"]
 [connection signal="button_up" from="Case/B" to="Screen/Exit/ExitControl" method="_on_b_button_up"]
+[connection signal="button_up" from="Case/B" to="Screen/FeedMenu/FeedControl" method="_on_b_button_up"]
 [connection signal="button_up" from="Case/C" to="Screen/Icons/SelectControl" method="_on_c_button_up"]
+[connection signal="button_up" from="Case/C" to="Screen/FeedMenu/FeedControl" method="_on_c_button_up"]
