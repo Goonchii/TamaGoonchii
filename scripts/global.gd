@@ -7,6 +7,8 @@ var a_active: bool = false
 var b_active: bool = false
 var c_active: bool = false
 
+# TODO: Add save + load
+
 func hide_layers() -> void:
 	exit_layer.hide()
 	feed_menu.hide()
