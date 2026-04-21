@@ -8,6 +8,7 @@ var boredom: int = 10
 
 const MIN_HUNGER = 0
 const MAX_HUNGER = 10
+var is_feeding: bool = false
 
 func _ready() -> void:
 	print("Starting..")
@@ -19,8 +20,13 @@ func _ready() -> void:
 	$DirtyTimer.start()
 	$BoredomTimer.start()
 	update_animation()
+	if tama_sprite.animation_finished.is_connected(_on_tama_sprite_animation_finished):
+		print("Signal connected")
+	else:
+		print("Not connected")
 
 func update_animation() -> void:
+	if is_feeding: return
 	if dirtiness < 4:
 		tama_sprite.play("dirty")
 	elif boredom < 4:
@@ -51,15 +57,20 @@ func boredom_timeout() -> void:
 
 
 func feed_meal(hunger_increase) -> void:
+	is_feeding = true
 	hunger = clamp(hunger + hunger_increase, MIN_HUNGER, MAX_HUNGER)
 	tama_sprite.play("feedmeal")
 	print("Hunger is now : ", hunger)
 func feed_snack(hunger_increase) -> void:
+	is_feeding = true
 	hunger = clamp(hunger + hunger_increase, MIN_HUNGER, MAX_HUNGER)
 	tama_sprite.play("feedsnack")
 	print("Hunger is now : ", hunger)
 
-func _on_tama_sprite_animation_finished(anim_name) -> void:
+func _on_tama_sprite_animation_finished() -> void:
 	# TODO: Fix this (not getting arg ^)
-	if anim_name == "feedmeal" || "feedsnack":
+	var anim_name = tama_sprite.animation
+	print("Anim finished :", anim_name)
+	if anim_name in ["feedmeal", "feedsnack"]:
+		is_feeding = false
 		update_animation()
