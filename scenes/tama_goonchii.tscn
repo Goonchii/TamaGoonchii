@@ -360,6 +360,9 @@ wait_time = 6.0
 [node name="BoredomTimer" type="Timer" parent="TamaController" unique_id=799552296]
 wait_time = 4.5
 
+[node name="PoopTimer" type="Timer" parent="TamaController" unique_id=1476259329]
+wait_time = 9.0
+
 [node name="Screen" type="CanvasLayer" parent="." unique_id=2130259119]
 
 [node name="ScreenBG" type="Sprite2D" parent="Screen" unique_id=1890741163]

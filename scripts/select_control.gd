@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var icons_layer: CanvasGroup = get_node("/root/TamaGoonchii/Screen/Icons")
 @onready var tama_sprite: AnimatedSprite2D = get_node("/root/TamaGoonchii/Screen/TamaSprite")
+@onready var tama_controller: Node2D = get_node("/root/TamaGoonchii/TamaController")
 
 @onready var exit_control: Node2D = get_node("/root/TamaGoonchii/Screen/Exit/ExitControl")
 @onready var feed_control: Node2D = get_node("/root/TamaGoonchii/Screen/FeedMenu/FeedControl")
@@ -48,8 +49,8 @@ func _on_b_button_up() -> void:
 				deactivate_main()
 				print("Sleep")
 			4:
-				deactivate_main()
 				print("Shovel")
+				tama_controller.clear_poop()
 			5:
 				deactivate_main()
 				print("Meds")
