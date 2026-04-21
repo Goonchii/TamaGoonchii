@@ -53,6 +53,7 @@
 [ext_resource type="Texture2D" uid="uid://ciliqiuhngdst" path="res://assets/Sprite/FeedFood4.png" id="27_15pvq"]
 [ext_resource type="Texture2D" uid="uid://dy0wolxn6viwp" path="res://assets/Sprite/FeedFood5.png" id="28_h2mll"]
 [ext_resource type="Script" uid="uid://0d8nq6bh5jik" path="res://scripts/feed_control.gd" id="29_mynss"]
+[ext_resource type="Script" uid="uid://dfiymdyjt4h15" path="res://scripts/clean_control.gd" id="49_8bvg7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hlevq"]
 animations = [{
@@ -82,23 +83,8 @@ animations = [{
 }, {
 "duration": 3.0,
 "texture": ExtResource("10_swvw2")
-}, {
-"duration": 3.0,
-"texture": ExtResource("11_8bvg7")
-}, {
-"duration": 3.0,
-"texture": ExtResource("12_lf2kp")
-}, {
-"duration": 3.0,
-"texture": ExtResource("13_yyhul")
-}, {
-"duration": 3.0,
-"texture": ExtResource("14_f3c2a")
-}, {
-"duration": 3.0,
-"texture": ExtResource("15_e0snb")
 }],
-"loop": true,
+"loop": false,
 "name": &"clean",
 "speed": 5.0
 }, {
@@ -174,6 +160,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 3.0,
+"texture": ExtResource("11_8bvg7")
+}, {
+"duration": 3.0,
+"texture": ExtResource("12_lf2kp")
+}, {
+"duration": 3.0,
+"texture": ExtResource("13_yyhul")
+}, {
+"duration": 3.0,
+"texture": ExtResource("14_f3c2a")
+}, {
+"duration": 3.0,
+"texture": ExtResource("15_e0snb")
+}],
+"loop": false,
+"name": &"rinse",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 3.0,
 "texture": ExtResource("12_l42gy")
 }, {
 "duration": 3.0,
@@ -227,7 +233,7 @@ texture_filter = 1
 position = Vector2(215, 250)
 scale = Vector2(4.8125, 4.8125)
 sprite_frames = SubResource("SpriteFrames_hlevq")
-animation = &"feedfood"
+animation = &"rinse"
 
 [node name="Icons" type="CanvasGroup" parent="Screen" unique_id=1733243191]
 
@@ -357,6 +363,12 @@ layout_mode = 2
 theme = ExtResource("15_a7k32")
 text = "Drink"
 
+[node name="Clean" type="CanvasGroup" parent="Screen" unique_id=1078399722]
+visible = false
+
+[node name="CleanControl" type="Node2D" parent="Screen/Clean" unique_id=2056145508]
+script = ExtResource("49_8bvg7")
+
 [node name="Shader" type="ColorRect" parent="Screen" unique_id=1371273175]
 material = SubResource("ShaderMaterial_qq0sh")
 offset_left = 62.0
@@ -408,5 +420,7 @@ texture_hover = ExtResource("6_aagdy")
 [connection signal="button_up" from="Case/B" to="Screen/Icons/SelectControl" method="_on_b_button_up"]
 [connection signal="button_up" from="Case/B" to="Screen/Exit/ExitControl" method="_on_b_button_up"]
 [connection signal="button_up" from="Case/B" to="Screen/FeedMenu/FeedControl" method="_on_b_button_up"]
+[connection signal="button_up" from="Case/B" to="Screen/Clean/CleanControl" method="_on_b_button_up"]
 [connection signal="button_up" from="Case/C" to="Screen/Icons/SelectControl" method="_on_c_button_up"]
 [connection signal="button_up" from="Case/C" to="Screen/FeedMenu/FeedControl" method="_on_c_button_up"]
+[connection signal="button_up" from="Case/C" to="Screen/Clean/CleanControl" method="_on_c_button_up"]

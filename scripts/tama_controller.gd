@@ -2,6 +2,9 @@ extends Node2D
 
 @onready var tama_sprite: AnimatedSprite2D = get_node("/root/TamaGoonchii/Screen/TamaSprite")
 
+@onready var main: Node2D = get_node("/root/TamaGoonchii/Screen/Icons/SelectControl")
+@onready var clean_control: Node2D = get_node("/root/TamaGoonchii/Screen/Clean/CleanControl")
+
 var hunger: int = 10
 var dirtiness: int = 10
 var boredom: int = 10
@@ -9,6 +12,7 @@ var boredom: int = 10
 const MIN_HUNGER = 0
 const MAX_HUNGER = 10
 var is_feeding: bool = false
+var is_cleaning: bool = false
 
 func _ready() -> void:
 	print("Starting..")
@@ -20,13 +24,9 @@ func _ready() -> void:
 	$DirtyTimer.start()
 	$BoredomTimer.start()
 	update_animation()
-	if tama_sprite.animation_finished.is_connected(_on_tama_sprite_animation_finished):
-		print("Signal connected")
-	else:
-		print("Not connected")
 
 func update_animation() -> void:
-	if is_feeding: return
+	if is_feeding || is_cleaning: return
 	if dirtiness < 4:
 		tama_sprite.play("dirty")
 	elif boredom < 4:
@@ -72,4 +72,9 @@ func _on_tama_sprite_animation_finished() -> void:
 	print("Anim finished :", anim_name)
 	if anim_name in ["feedfood", "feeddrink"]:
 		is_feeding = false
+		update_animation()
+	if anim_name in ["rinse"]:
+		is_cleaning = false
+		clean_control.deactivate_clean()
+		main.activate_main()
 		update_animation()

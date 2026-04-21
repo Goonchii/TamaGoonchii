@@ -5,6 +5,7 @@ extends Node2D
 
 @onready var exit_control: Node2D = get_node("/root/TamaGoonchii/Screen/Exit/ExitControl")
 @onready var feed_control: Node2D = get_node("/root/TamaGoonchii/Screen/FeedMenu/FeedControl")
+@onready var clean_control: Node2D = get_node("/root/TamaGoonchii/Screen/Clean/CleanControl")
 
 var main_is_active: bool = false
 
@@ -42,6 +43,7 @@ func _on_b_button_up() -> void:
 			2:
 				deactivate_main()
 				print("Clean")
+				clean_control.clean()
 			3:
 				deactivate_main()
 				print("Sleep")
