@@ -27,20 +27,15 @@
 [ext_resource type="Texture2D" uid="uid://dddl36wuypgwb" path="res://assets/Sprite/Clean4.png" id="9_ky4mf"]
 [ext_resource type="Texture2D" uid="uid://bh46iaqppxlb0" path="res://assets/Sprite/Hungry1.png" id="10_5pv2q"]
 [ext_resource type="Texture2D" uid="uid://dbxooj88spavq" path="res://assets/Temp Icons/temp status icon.png" id="10_aymvy"]
-[ext_resource type="Texture2D" uid="uid://d0gfdpec5alsj" path="res://assets/Sprite/Feed1.png" id="10_kvy8a"]
 [ext_resource type="Texture2D" uid="uid://cme7s6td1ife6" path="res://assets/Sprite/Clean5.png" id="10_swvw2"]
-[ext_resource type="Texture2D" uid="uid://wk016ipjyhue" path="res://assets/Sprite/Feed2.png" id="11_5pv2q"]
 [ext_resource type="Texture2D" uid="uid://wa2ut7331k0u" path="res://assets/Sprite/Clean6.png" id="11_8bvg7"]
 [ext_resource type="Texture2D" uid="uid://6dworsal4lpg" path="res://assets/Sprite/Hungry2.png" id="11_fdtir"]
 [ext_resource type="Texture2D" uid="uid://d3akg224vg052" path="res://assets/Temp Icons/temp menu icon.png" id="11_su65o"]
-[ext_resource type="Texture2D" uid="uid://c4l63elk5cxk8" path="res://assets/Sprite/Feed3.png" id="12_fdtir"]
 [ext_resource type="Texture2D" uid="uid://dcevkkluh3uhk" path="res://assets/Sprite/Sick1.png" id="12_l42gy"]
 [ext_resource type="Texture2D" uid="uid://bl3yeka86davg" path="res://assets/Sprite/Clean7.png" id="12_lf2kp"]
 [ext_resource type="Texture2D" uid="uid://hi1ko1k53jqs" path="res://assets/Sprite/Sick2.png" id="13_5xtr0"]
 [ext_resource type="Texture2D" uid="uid://ochg0bhpabhn" path="res://assets/Case/icon bars.png" id="13_81wvq"]
-[ext_resource type="Texture2D" uid="uid://bsnjul08031oo" path="res://assets/Sprite/Feed4.png" id="13_l42gy"]
 [ext_resource type="Texture2D" uid="uid://dsvhrpypvwp4x" path="res://assets/Sprite/Clean8.png" id="13_yyhul"]
-[ext_resource type="Texture2D" uid="uid://ce6hukb1ouewu" path="res://assets/Sprite/Feed5.png" id="14_5xtr0"]
 [ext_resource type="Script" uid="uid://cb0n022u7hwut" path="res://scripts/exit_control.gd" id="14_a7k32"]
 [ext_resource type="Texture2D" uid="uid://dyafqndlibgvy" path="res://assets/Sprite/Clean9.png" id="14_f3c2a"]
 [ext_resource type="Texture2D" uid="uid://n5s3ja412w0j" path="res://assets/Sprite/Tired1.png" id="14_kajtc"]
@@ -48,6 +43,15 @@
 [ext_resource type="Theme" uid="uid://cl24q2htnt7rx" path="res://themes/small_text.tres" id="15_a7k32"]
 [ext_resource type="Texture2D" uid="uid://hsybwoyxp3bx" path="res://assets/Sprite/Clean10.png" id="15_e0snb"]
 [ext_resource type="Texture2D" uid="uid://cp24bu7woopix" path="res://assets/Sprite/Tired2.png" id="15_hlevq"]
+[ext_resource type="Texture2D" uid="uid://he6pgkfclnu4" path="res://assets/Sprite/FeedDrink1.png" id="20_swvw2"]
+[ext_resource type="Texture2D" uid="uid://dyr2xl162sqti" path="res://assets/Sprite/FeedDrink2.png" id="21_8bvg7"]
+[ext_resource type="Texture2D" uid="uid://djhaae5881sca" path="res://assets/Sprite/FeedDrink3.png" id="22_lf2kp"]
+[ext_resource type="Texture2D" uid="uid://dvigaklfbpp2u" path="res://assets/Sprite/FeedDrink4.png" id="23_yyhul"]
+[ext_resource type="Texture2D" uid="uid://dusdkxiw70xbm" path="res://assets/Sprite/FeedFood1.png" id="24_f3c2a"]
+[ext_resource type="Texture2D" uid="uid://vin7byi0tb03" path="res://assets/Sprite/FeedFood2.png" id="25_e0snb"]
+[ext_resource type="Texture2D" uid="uid://bduxn3q5vnte5" path="res://assets/Sprite/FeedFood3.png" id="26_oyvfd"]
+[ext_resource type="Texture2D" uid="uid://ciliqiuhngdst" path="res://assets/Sprite/FeedFood4.png" id="27_15pvq"]
+[ext_resource type="Texture2D" uid="uid://dy0wolxn6viwp" path="res://assets/Sprite/FeedFood5.png" id="28_h2mll"]
 [ext_resource type="Script" uid="uid://0d8nq6bh5jik" path="res://scripts/feed_control.gd" id="29_mynss"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hlevq"]
@@ -122,39 +126,39 @@ animations = [{
 }, {
 "frames": [{
 "duration": 3.0,
-"texture": ExtResource("10_kvy8a")
+"texture": ExtResource("20_swvw2")
 }, {
 "duration": 3.0,
-"texture": ExtResource("11_5pv2q")
+"texture": ExtResource("21_8bvg7")
 }, {
 "duration": 3.0,
-"texture": ExtResource("12_fdtir")
+"texture": ExtResource("22_lf2kp")
 }, {
 "duration": 3.0,
-"texture": ExtResource("13_l42gy")
-}, {
-"duration": 3.0,
-"texture": ExtResource("14_5xtr0")
+"texture": ExtResource("23_yyhul")
 }],
 "loop": false,
-"name": &"feedmeal",
+"name": &"feeddrink",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 3.0,
-"texture": ExtResource("8_3abdp")
+"texture": ExtResource("24_f3c2a")
 }, {
 "duration": 3.0,
-"texture": ExtResource("12_l42gy")
+"texture": ExtResource("25_e0snb")
 }, {
 "duration": 3.0,
-"texture": ExtResource("8_3abdp")
+"texture": ExtResource("26_oyvfd")
 }, {
 "duration": 3.0,
-"texture": ExtResource("12_l42gy")
+"texture": ExtResource("27_15pvq")
+}, {
+"duration": 3.0,
+"texture": ExtResource("28_h2mll")
 }],
 "loop": false,
-"name": &"feedsnack",
+"name": &"feedfood",
 "speed": 5.0
 }, {
 "frames": [{
@@ -223,7 +227,7 @@ texture_filter = 1
 position = Vector2(215, 250)
 scale = Vector2(4.8125, 4.8125)
 sprite_frames = SubResource("SpriteFrames_hlevq")
-animation = &"feedmeal"
+animation = &"feedfood"
 
 [node name="Icons" type="CanvasGroup" parent="Screen" unique_id=1733243191]
 
@@ -343,15 +347,15 @@ offset_right = 303.0
 offset_bottom = 420.0
 theme_override_constants/separation = -9
 
-[node name="Meal" type="Label" parent="Screen/FeedMenu/VBoxContainer" unique_id=803381954]
+[node name="Food" type="Label" parent="Screen/FeedMenu/VBoxContainer" unique_id=803381954]
 layout_mode = 2
 theme = ExtResource("15_a7k32")
-text = "Meal"
+text = "Food"
 
-[node name="Snack" type="Label" parent="Screen/FeedMenu/VBoxContainer" unique_id=676804711]
+[node name="Drink" type="Label" parent="Screen/FeedMenu/VBoxContainer" unique_id=676804711]
 layout_mode = 2
 theme = ExtResource("15_a7k32")
-text = "Snack"
+text = "Drink"
 
 [node name="Shader" type="ColorRect" parent="Screen" unique_id=1371273175]
 material = SubResource("ShaderMaterial_qq0sh")
