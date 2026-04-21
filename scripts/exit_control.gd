@@ -31,10 +31,12 @@ func _on_b_button_up() -> void:
 func exit_menu() -> void:
 	exit_layer.show()
 	exit_active = true
+	exit_items = [yes_label, no_label]
+	exit_index = 0
+	move_arrow()
 	Global.a_active = true
 	Global.b_active = true
 	Global.c_active = false
-	exit_items = [yes_label, no_label]
 func deactivate_exit() -> void:
 	exit_layer.hide()
 	exit_active = false
