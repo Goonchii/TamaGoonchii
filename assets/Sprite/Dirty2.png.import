@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bai603e06ey41"
-path="res://.godot/imported/TamaGoonchii9.png-613301fa2ce495c2cf5ecb2299653da7.ctex"
+uid="uid://ce2pi2jtklyap"
+path="res://.godot/imported/Dirty2.png-6bea6c20444e8830ce27e91471475c78.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprite/TamaGoonchii9.png"
-dest_files=["res://.godot/imported/TamaGoonchii9.png-613301fa2ce495c2cf5ecb2299653da7.ctex"]
+source_file="res://assets/Sprite/Dirty2.png"
+dest_files=["res://.godot/imported/Dirty2.png-6bea6c20444e8830ce27e91471475c78.ctex"]
 
 [params]
 

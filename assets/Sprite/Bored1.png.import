@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtnayglncqlsu"
-path="res://.godot/imported/TamaGoonchii5.png-00ec71947b5da2dd73858ce8d5e7d3e9.ctex"
+uid="uid://cud0nqlr16u0r"
+path="res://.godot/imported/Bored1.png-4d4f37c6d8615e22e9f176d741c2dc2b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprite/TamaGoonchii5.png"
-dest_files=["res://.godot/imported/TamaGoonchii5.png-00ec71947b5da2dd73858ce8d5e7d3e9.ctex"]
+source_file="res://assets/Sprite/Bored1.png"
+dest_files=["res://.godot/imported/Bored1.png-4d4f37c6d8615e22e9f176d741c2dc2b.ctex"]
 
 [params]
 
