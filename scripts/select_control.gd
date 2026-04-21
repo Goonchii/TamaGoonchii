@@ -3,6 +3,7 @@ extends Node2D
 @onready var icons_layer: CanvasGroup = get_node("/root/TamaGoonchii/Screen/Icons")
 
 @onready var exit_control: Node2D = get_node("/root/TamaGoonchii/Screen/Exit/ExitControl")
+@onready var feed_control: Node2D = get_node("/root/TamaGoonchii/Screen/FeedMenu/FeedControl")
 
 var main_is_active: bool = false
 
@@ -33,6 +34,7 @@ func _on_b_button_up() -> void:
 			0:
 				deactivate_main()
 				print("Feed") # TODO: Feed func goes here + etc V
+				feed_control.feed_menu()
 			1:
 				deactivate_main()
 				print("Play")
