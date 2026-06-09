@@ -3,7 +3,6 @@ extends Node2D
 @onready var tama_controller: Node2D = get_node("/root/TamaGoonchii/TamaController")
 @onready var tama_sprite: AnimatedSprite2D = get_node("/root/TamaGoonchii/Screen/TamaSprite")
 @onready var main: Node2D = get_node("/root/TamaGoonchii/Screen/Icons/SelectControl")
-@onready var icons_layer: CanvasGroup = get_node("/root/TamaGoonchii/Screen/Icons")
 
 @onready var clean_layer: CanvasGroup = get_node("/root/TamaGoonchii/Screen/Clean")
 
