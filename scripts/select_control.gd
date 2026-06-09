@@ -6,6 +6,7 @@ extends Node2D
 
 @onready var exit_control: Node2D = get_node("/root/TamaGoonchii/Screen/Exit/ExitControl")
 @onready var feed_control: Node2D = get_node("/root/TamaGoonchii/Screen/FeedMenu/FeedControl")
+@onready var play_control: Node2D = get_node("/root/TamaGoonchii/Screen/Play/PlayControl")
 @onready var clean_control: Node2D = get_node("/root/TamaGoonchii/Screen/Clean/CleanControl")
 
 var main_is_active: bool = false
@@ -41,6 +42,8 @@ func _on_b_button_up() -> void:
 			1:
 				deactivate_main()
 				print("Play")
+				# Change to play menu if adding more games
+				play_control.play()
 			2:
 				deactivate_main()
 				print("Clean")

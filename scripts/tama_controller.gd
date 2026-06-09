@@ -12,9 +12,12 @@ var poop: int = 0
 
 const MIN_HUNGER = 0
 const MAX_HUNGER = 10
+const MIN_BOREDOM = 0
+const MAX_BOREDOM = 10
 var is_feeding: bool = false
 var is_cleaning: bool = false
 var is_clearing: bool = false
+var is_playing: bool = false
 
 func _ready() -> void:
 	print("Starting..")
@@ -93,6 +96,9 @@ func clear_poop() -> void:
 		is_clearing = false
 	poop = 0
 	print("Poop is now: ", poop)
+
+# func play_game(game, play_increase) -> void:
+	# boredom = clamp(boredom + play_increase, MIN_BOREDOM, MAX_BOREDOM)
 
 func _on_tama_sprite_animation_finished() -> void:
 	var anim_name = tama_sprite.animation
