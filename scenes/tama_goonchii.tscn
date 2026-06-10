@@ -223,6 +223,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 3.0,
+"texture": ExtResource("77_x75sp")
+}, {
+"duration": 3.0,
+"texture": ExtResource("78_c3fp4")
+}],
+"loop": false,
+"name": &"correct",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 3.0,
 "texture": ExtResource("6_rfc70")
 }, {
 "duration": 3.0,
@@ -284,7 +295,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("50_jaqxd")
 }],
-"loop": true,
+"loop": false,
 "name": &"guessL",
 "speed": 5.0
 }, {
@@ -292,7 +303,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("51_hien0")
 }],
-"loop": true,
+"loop": false,
 "name": &"guessR",
 "speed": 5.0
 }, {
@@ -308,6 +319,29 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
+"duration": 3.0,
+"texture": ExtResource("54_squ47")
+}, {
+"duration": 3.0,
+"texture": ExtResource("55_i6yga")
+}],
+"loop": false,
+"name": &"incorrect",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("54_squ47")
+}, {
+"duration": 3.0,
+"texture": ExtResource("55_i6yga")
+}, {
+"duration": 3.0,
+"texture": ExtResource("54_squ47")
+}, {
+"duration": 3.0,
+"texture": ExtResource("55_i6yga")
+}, {
 "duration": 3.0,
 "texture": ExtResource("54_squ47")
 }, {
@@ -423,6 +457,18 @@ animations = [{
 }, {
 "duration": 3.0,
 "texture": ExtResource("78_c3fp4")
+}, {
+"duration": 3.0,
+"texture": ExtResource("77_x75sp")
+}, {
+"duration": 3.0,
+"texture": ExtResource("78_c3fp4")
+}, {
+"duration": 3.0,
+"texture": ExtResource("77_x75sp")
+}, {
+"duration": 3.0,
+"texture": ExtResource("78_c3fp4")
 }],
 "loop": false,
 "name": &"win",
@@ -440,16 +486,16 @@ script = ExtResource("1_t436j")
 script = ExtResource("2_xlg61")
 
 [node name="HungerTimer" type="Timer" parent="TamaController" unique_id=1423488531]
-wait_time = 3.0
+wait_time = 60.0
 
 [node name="DirtyTimer" type="Timer" parent="TamaController" unique_id=1766672064]
-wait_time = 6.0
+wait_time = 120.0
 
 [node name="BoredomTimer" type="Timer" parent="TamaController" unique_id=799552296]
-wait_time = 4.5
+wait_time = 90.0
 
 [node name="PoopTimer" type="Timer" parent="TamaController" unique_id=1476259329]
-wait_time = 190.0
+wait_time = 1200.0
 
 [node name="Screen" type="CanvasLayer" parent="." unique_id=2130259119]
 
@@ -465,8 +511,11 @@ position = Vector2(215, 250)
 scale = Vector2(4.8125, 4.8125)
 sprite_frames = SubResource("SpriteFrames_hlevq")
 animation = &"lose"
+frame = 5
+frame_progress = 1.0
 
 [node name="Icons" type="CanvasGroup" parent="Screen" unique_id=1733243191]
+visible = false
 
 [node name="SelectControl" type="Node2D" parent="Screen/Icons" unique_id=196078883]
 script = ExtResource("5_81wvq")
@@ -606,12 +655,23 @@ visible = false
 [node name="PlayControl" type="Node2D" parent="Screen/Play" unique_id=962563969]
 script = ExtResource("80_2hn61")
 
-[node name="Label" type="Label" parent="Screen/Play" unique_id=1018015958]
-offset_left = 182.0
-offset_top = 220.0
-offset_right = 222.0
-offset_bottom = 243.0
-text = "ggggggggg"
+[node name="<" type="Label" parent="Screen/Play" unique_id=567465842]
+visible = false
+offset_left = 125.0
+offset_top = 320.0
+offset_right = 150.0
+offset_bottom = 400.0
+theme = ExtResource("14_njl1l")
+text = "<"
+
+[node name=">" type="Label" parent="Screen/Play" unique_id=2075977131]
+visible = false
+offset_left = 210.0
+offset_top = 320.0
+offset_right = 235.0
+offset_bottom = 400.0
+theme = ExtResource("14_njl1l")
+text = ">"
 
 [node name="Shader" type="ColorRect" parent="Screen" unique_id=1371273175]
 material = SubResource("ShaderMaterial_qq0sh")
@@ -658,6 +718,7 @@ texture_pressed = ExtResource("5_xlg61")
 texture_hover = ExtResource("6_aagdy")
 
 [connection signal="animation_finished" from="Screen/TamaSprite" to="TamaController" method="_on_tama_sprite_animation_finished"]
+[connection signal="animation_finished" from="Screen/TamaSprite" to="Screen/Play/PlayControl" method="_on_tama_sprite_animation_finished"]
 [connection signal="button_up" from="Case/A" to="Screen/Icons/SelectControl" method="_on_a_button_up"]
 [connection signal="button_up" from="Case/A" to="Screen/Exit/ExitControl" method="_on_a_button_up"]
 [connection signal="button_up" from="Case/A" to="Screen/FeedMenu/FeedControl" method="_on_a_button_up"]

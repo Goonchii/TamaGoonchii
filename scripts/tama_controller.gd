@@ -4,6 +4,7 @@ extends Node2D
 
 @onready var main: Node2D = get_node("/root/TamaGoonchii/Screen/Icons/SelectControl")
 @onready var clean_control: Node2D = get_node("/root/TamaGoonchii/Screen/Clean/CleanControl")
+@onready var play_control: Node2D = get_node("/root/TamaGoonchii/Screen/Play/PlayControl")
 
 var hunger: int = 10
 var dirtiness: int = 10
@@ -33,7 +34,7 @@ func _ready() -> void:
 	update_animation()
 
 func update_animation() -> void:
-	if is_feeding || is_cleaning || is_clearing: return
+	if is_feeding || is_cleaning || is_clearing || play_control.play_active : return
 	if poop == 1:
 		tama_sprite.play("poop1")
 	elif poop == 2:
