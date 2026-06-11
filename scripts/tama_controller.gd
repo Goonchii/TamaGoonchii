@@ -47,20 +47,28 @@ func update_animation() -> void:
 	if is_feeding || is_cleaning || is_clearing || play_control.play_active : return
 	if sick == 5:
 		tama_sprite.play("sick")
+		status = "Sick o~o"
 	elif tired > 8:
 		tama_sprite.play("tired")
+		status = "Tired u.u"
 	elif poop == 1:
 		tama_sprite.play("poop1")
+		status = "Smelly :("
 	elif poop == 2:
 		tama_sprite.play("poop2")
+		status = "Smelly :("
 	elif dirtiness < 4:
 		tama_sprite.play("dirty")
+		status = "Dirty :("
 	elif boredom < 4:
 		tama_sprite.play("bored")
+		status = "Bored :/"
 	elif hunger < 4:
 		tama_sprite.play("hungry")
+		status = "Hungry :/"
 	else:
 		tama_sprite.play("default")
+		status = "Happy :D"
 
 
 func hunger_timeout() -> void:

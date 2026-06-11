@@ -8,6 +8,7 @@ extends Node2D
 @onready var feed_control: Node2D = get_node("/root/TamaGoonchii/Screen/FeedMenu/FeedControl")
 @onready var play_control: Node2D = get_node("/root/TamaGoonchii/Screen/Play/PlayControl")
 @onready var clean_control: Node2D = get_node("/root/TamaGoonchii/Screen/Clean/CleanControl")
+@onready var status_menu_control: Node2D = get_node("/root/TamaGoonchii/Screen/StatusMenu/StatusMenuControl")
 
 var main_is_active: bool = false
 
@@ -60,6 +61,7 @@ func _on_b_button_up() -> void:
 			6:
 				deactivate_main()
 				print("Status")
+				status_menu_control.status_menu()
 			7:
 				deactivate_main()
 				print("Menu")

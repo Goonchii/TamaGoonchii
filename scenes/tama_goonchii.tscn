@@ -99,6 +99,8 @@
 [ext_resource type="Texture2D" uid="uid://crtwadjwsuj7n" path="res://assets/Sprite/Win1.png" id="77_x75sp"]
 [ext_resource type="Texture2D" uid="uid://csf1mtxwrou60" path="res://assets/Sprite/Win2.png" id="78_c3fp4"]
 [ext_resource type="Script" uid="uid://05qemclroj5m" path="res://scripts/play_control.gd" id="80_2hn61"]
+[ext_resource type="Theme" uid="uid://bnyasf0yrndii" path="res://themes/smaller_text.tres" id="95_i6yga"]
+[ext_resource type="Script" uid="uid://b7of1tptha22q" path="res://scripts/status_menu_control.gd" id="95_x75sp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hlevq"]
 animations = [{
@@ -510,14 +512,13 @@ texture = ExtResource("2_t4b6s")
 centered = false
 
 [node name="TamaSprite" type="AnimatedSprite2D" parent="Screen" unique_id=103181815]
+visible = false
 self_modulate = Color(1, 1, 1, 0.69411767)
 texture_filter = 1
 position = Vector2(215, 250)
 scale = Vector2(4.8125, 4.8125)
 sprite_frames = SubResource("SpriteFrames_hlevq")
-animation = &"lose"
-frame = 5
-frame_progress = 1.0
+animation = &"tired"
 
 [node name="Icons" type="CanvasGroup" parent="Screen" unique_id=1733243191]
 visible = false
@@ -678,6 +679,55 @@ offset_bottom = 400.0
 theme = ExtResource("14_njl1l")
 text = ">"
 
+[node name="StatusMenu" type="CanvasGroup" parent="Screen" unique_id=506651350]
+visible = false
+
+[node name="StatusMenuControl" type="Node2D" parent="Screen/StatusMenu" unique_id=439074389]
+script = ExtResource("95_x75sp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Screen/StatusMenu" unique_id=186545902]
+offset_left = 105.0
+offset_top = 145.0
+offset_right = 335.0
+offset_bottom = 411.0
+theme_override_constants/separation = -7
+
+[node name="Status" type="Label" parent="Screen/StatusMenu/VBoxContainer" unique_id=181130270]
+layout_mode = 2
+theme = ExtResource("95_i6yga")
+text = "Status:"
+
+[node name="StatusLabel" type="Label" parent="Screen/StatusMenu/VBoxContainer" unique_id=1346583975]
+layout_mode = 2
+theme = ExtResource("15_a7k32")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Screen/StatusMenu/VBoxContainer" unique_id=1889699391]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Age" type="Label" parent="Screen/StatusMenu/VBoxContainer/HBoxContainer" unique_id=1924514157]
+layout_mode = 2
+theme = ExtResource("95_i6yga")
+text = "Age:"
+
+[node name="AgeLabel" type="Label" parent="Screen/StatusMenu/VBoxContainer/HBoxContainer" unique_id=597712439]
+layout_mode = 2
+theme = ExtResource("15_a7k32")
+horizontal_alignment = 1
+
+[node name="Happiness" type="Label" parent="Screen/StatusMenu/VBoxContainer" unique_id=2056535507]
+layout_mode = 2
+theme = ExtResource("95_i6yga")
+text = "Happiness:"
+
+[node name="HappinessLabel" type="Label" parent="Screen/StatusMenu/VBoxContainer" unique_id=2116862812]
+layout_mode = 2
+theme = ExtResource("15_a7k32")
+horizontal_alignment = 1
+
+[node name="Options" type="CanvasGroup" parent="Screen" unique_id=768921187]
+
 [node name="Shader" type="ColorRect" parent="Screen" unique_id=1371273175]
 material = SubResource("ShaderMaterial_qq0sh")
 offset_left = 62.0
@@ -737,3 +787,4 @@ texture_hover = ExtResource("6_aagdy")
 [connection signal="button_up" from="Case/C" to="Screen/FeedMenu/FeedControl" method="_on_c_button_up"]
 [connection signal="button_up" from="Case/C" to="Screen/Clean/CleanControl" method="_on_c_button_up"]
 [connection signal="button_up" from="Case/C" to="Screen/Play/PlayControl" method="_on_c_button_up"]
+[connection signal="button_up" from="Case/C" to="Screen/StatusMenu/StatusMenuControl" method="_on_c_button_up"]
