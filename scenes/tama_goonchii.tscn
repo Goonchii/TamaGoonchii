@@ -497,6 +497,11 @@ wait_time = 90.0
 [node name="PoopTimer" type="Timer" parent="TamaController" unique_id=1476259329]
 wait_time = 1200.0
 
+[node name="SickTimer" type="Timer" parent="TamaController" unique_id=528378416]
+wait_time = 3.0
+
+[node name="TiredTimer" type="Timer" parent="TamaController" unique_id=1996411695]
+
 [node name="Screen" type="CanvasLayer" parent="." unique_id=2130259119]
 
 [node name="ScreenBG" type="Sprite2D" parent="Screen" unique_id=1890741163]

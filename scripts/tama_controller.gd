@@ -10,6 +10,8 @@ var hunger: int = 10
 var dirtiness: int = 10
 var boredom: int = 10
 var poop: int = 0
+var tired: int = 0
+var sick: int = 0
 
 const MIN_HUNGER = 0
 const MAX_HUNGER = 10
@@ -26,16 +28,24 @@ func _ready() -> void:
 	$DirtyTimer.timeout.connect(dirty_timeout)
 	$BoredomTimer.timeout.connect(boredom_timeout)
 	$PoopTimer.timeout.connect(poop_timeout)
+	$SickTimer.timeout.connect(sick_timeout)
+	$TiredTimer.timeout.connect(tired_timeout)
 	# TODO: Move this later
 	$HungerTimer.start()
 	$DirtyTimer.start()
 	$BoredomTimer.start()
 	$PoopTimer.start()
+	$SickTimer.start()
+	$TiredTimer.start()
 	update_animation()
 
 func update_animation() -> void:
 	if is_feeding || is_cleaning || is_clearing || play_control.play_active : return
-	if poop == 1:
+	if sick == 5:
+		tama_sprite.play("sick")
+	elif tired > 8:
+		tama_sprite.play("tired")
+	elif poop == 1:
 		tama_sprite.play("poop1")
 	elif poop == 2:
 		tama_sprite.play("poop2")
@@ -71,6 +81,18 @@ func poop_timeout() -> void:
 	if randi_range(1,10) < 5 && poop < 2:
 		poop += 1
 		print("Poop is now : ", poop)
+		update_animation()
+
+func sick_timeout() -> void:
+	if randi_range(1,10) < 5 && sick < 5:
+		sick += 1
+		print("Sick is now: ", sick)
+		update_animation()
+
+func tired_timeout() -> void:
+	if randi_range(1,10) < 5 && tired < 10:
+		tired += 1
+		print("Tired is now: ", tired)
 		update_animation()
 
 
