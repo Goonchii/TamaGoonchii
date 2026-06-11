@@ -504,6 +504,9 @@ wait_time = 3.0
 
 [node name="TiredTimer" type="Timer" parent="TamaController" unique_id=1996411695]
 
+[node name="HappinessTimer" type="Timer" parent="TamaController" unique_id=1579781217]
+wait_time = 300.0
+
 [node name="Screen" type="CanvasLayer" parent="." unique_id=2130259119]
 
 [node name="ScreenBG" type="Sprite2D" parent="Screen" unique_id=1890741163]

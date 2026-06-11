@@ -9,6 +9,7 @@ extends Node2D
 var status: String = "Happy :D"
 var age: int = 0
 var happiness: int = 5
+var state_check: String = ""
 
 var hunger: int = 10
 var dirtiness: int = 10
@@ -21,6 +22,9 @@ const MIN_HUNGER = 0
 const MAX_HUNGER = 10
 const MIN_BOREDOM = 0
 const MAX_BOREDOM = 10
+const MIN_HAPPINESS = 0
+const MAX_HAPPINESS = 5
+
 var is_feeding: bool = false
 var is_cleaning: bool = false
 var is_clearing: bool = false
@@ -34,6 +38,7 @@ func _ready() -> void:
 	$PoopTimer.timeout.connect(poop_timeout)
 	$SickTimer.timeout.connect(sick_timeout)
 	$TiredTimer.timeout.connect(tired_timeout)
+	$HappinessTimer.timeout.connect(happiness_timeout)
 	# TODO: Move this later
 	$HungerTimer.start()
 	$DirtyTimer.start()
@@ -82,6 +87,10 @@ func dirty_timeout() -> void:
 		dirtiness -= 1
 		print("Dirtiness is now : ", dirtiness)
 		update_animation()
+	if dirtiness == 10 && $HappinessTimer.is_stopped() && state_check == "":
+		$HappinessTimer.start()
+		state_check = "Dirty"
+		print("Started dirty")
 
 func boredom_timeout() -> void:
 	if randi_range(1,10) < 5 && boredom > 0:
@@ -100,12 +109,59 @@ func sick_timeout() -> void:
 		sick += 1
 		print("Sick is now: ", sick)
 		update_animation()
+	if sick == 5 && $HappinessTimer.is_stopped() && state_check == "":
+		$HappinessTimer.start()
+		state_check = "Sick"
+		print("started sick")
 
 func tired_timeout() -> void:
 	if randi_range(1,10) < 5 && tired < 10:
 		tired += 1
 		print("Tired is now: ", tired)
 		update_animation()
+	if tired == 10 && $HappinessTimer.is_stopped() && state_check == "":
+		$HappinessTimer.start()
+		state_check = "Tired"
+		print("Started tired")
+
+func happiness_timeout() -> void:
+	match state_check:
+		"Hungry":
+			if hunger == 0:
+				happiness = clamp(happiness - 1, MIN_HAPPINESS, MAX_HAPPINESS)
+				print("Happiness: ", happiness)
+				state_check = ""
+				$HappinessTimer.stop()
+		"Bored":
+			if boredom == 0:
+				happiness = clamp(happiness - 1, MIN_HAPPINESS, MAX_HAPPINESS)
+				print("Happiness: ", happiness)
+				state_check = ""
+				$HappinessTimer.stop()
+		"Dirty":
+			if dirtiness == 0:
+				happiness = clamp(happiness - 1, MIN_HAPPINESS, MAX_HAPPINESS)
+				print("Happiness: ", happiness)
+				state_check = ""
+				$HappinessTimer.stop()
+		"Poop":
+			if poop == 2:
+				happiness = clamp(happiness - 1, MIN_HAPPINESS, MAX_HAPPINESS)
+				print("Happiness: ", happiness)
+				state_check = ""
+				$HappinessTimer.stop()
+		"Tired":
+			if tired == 10:
+				happiness = clamp(happiness - 1, MIN_HAPPINESS, MAX_HAPPINESS)
+				print("Happiness: ", happiness)
+				state_check = ""
+				$HappinessTimer.stop()
+		"Sick":
+			if sick == 5:
+				happiness = clamp(happiness - 1, MIN_HAPPINESS, MAX_HAPPINESS)
+				print("Happiness: ", happiness)
+				state_check = ""
+				$HappinessTimer.stop()
 
 # TODO: ADD SLEEP AND MEDICINE
 
