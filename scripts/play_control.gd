@@ -46,15 +46,9 @@ func play_guess() -> void:
 	elif direction == "Right":
 		tama_sprite.play("guessR")
 
-func play_end() -> void:
-	if score > 3:
-		tama_sprite.play("win")
-		tama_controller.boredom += score
-	else:
-		tama_sprite.play("lose")
-
 func _on_tama_sprite_animation_finished() -> void:
 	var anim_name = tama_sprite.animation
+	
 	if anim_name in ["guessL", "guessR"]:
 		if guess == direction:
 			tama_sprite.play("correct")
@@ -66,10 +60,11 @@ func _on_tama_sprite_animation_finished() -> void:
 		guess = ""
 		left_arrow.hide()
 		right_arrow.hide()
+		
 	elif anim_name in ["correct", "incorrect"] && turns < 5:
 		play_guess()
 	elif anim_name in ["correct", "incorrect"] && turns == 5:
-		play_end()
+		tama_controller.play_end()
 	elif anim_name in ["win", "lose"]:
 		deactivate_play()
 		main.activate_main()

@@ -98,8 +98,13 @@ func clear_poop() -> void:
 	poop = 0
 	print("Poop is now: ", poop)
 
-# func play_game(game, play_increase) -> void:
-	# boredom = clamp(boredom + play_increase, MIN_BOREDOM, MAX_BOREDOM)
+func play_end() -> void:
+	if play_control.score > 3:
+		tama_sprite.play("win")
+		boredom = clamp(boredom + play_control.score, MIN_BOREDOM, MAX_BOREDOM)
+		print("Boredom: ", boredom)
+	else:
+		tama_sprite.play("lose")
 
 func _on_tama_sprite_animation_finished() -> void:
 	var anim_name = tama_sprite.animation
