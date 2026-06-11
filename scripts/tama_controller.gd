@@ -115,6 +115,7 @@ func _on_tama_sprite_animation_finished() -> void:
 	if anim_name in ["rinse"]:
 		is_cleaning = false
 		clean_control.deactivate_clean()
+		dirtiness = 10
 		main.activate_main()
 		update_animation()
 	if anim_name in ["clear1", "clear2"]:
