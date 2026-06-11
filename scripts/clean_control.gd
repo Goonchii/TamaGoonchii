@@ -11,7 +11,6 @@ var clean_active: bool = false
 func _on_b_button_up() -> void:
 	if not Global.b_active: return
 	if clean_active:
-		tama_controller.is_cleaning = true
 		tama_sprite.frame += 1
 		print("frame advanced: ", tama_sprite.frame)
 		if tama_sprite.frame == 4 :

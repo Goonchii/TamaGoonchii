@@ -49,6 +49,7 @@ func _on_b_button_up() -> void:
 				deactivate_main()
 				print("Clean")
 				clean_control.clean()
+				tama_controller.is_cleaning = true
 			3:
 				deactivate_main()
 				print("Sleep")
