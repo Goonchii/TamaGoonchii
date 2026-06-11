@@ -99,6 +99,7 @@ func tired_timeout() -> void:
 		print("Tired is now: ", tired)
 		update_animation()
 
+# TODO: ADD SLEEP AND MEDICINE
 
 func feed_food(hunger_increase) -> void:
 	is_feeding = true
