@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3 uid="uid://bnyasf0yrndii"]
+
+[ext_resource type="FontFile" uid="uid://dprbadmynvgw3" path="res://assets/m5x7.ttf" id="1_h02qd"]
+
+[resource]
+default_font = ExtResource("1_h02qd")
+default_font_size = 50
+Label/colors/font_color = Color(0.18431373, 0.2, 0.14901961, 1)
