@@ -6,6 +6,10 @@ extends Node2D
 @onready var clean_control: Node2D = get_node("/root/TamaGoonchii/Screen/Clean/CleanControl")
 @onready var play_control: Node2D = get_node("/root/TamaGoonchii/Screen/Play/PlayControl")
 
+var status: String = "Happy :D"
+var age: int = 0
+var happiness: int = 5
+
 var hunger: int = 10
 var dirtiness: int = 10
 var boredom: int = 10
